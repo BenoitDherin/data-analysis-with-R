@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+ 
+
+   
     {% if FAVICON %}
     <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
     {% endif %}
@@ -54,6 +56,8 @@
         {% endif %}
     {% endif %}
 
+
+
     <!-- Bootstrap -->
     {% if BOOTSTRAP_THEME %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" type="text/css"/>
@@ -87,6 +91,7 @@
     {% if EXTRA_HEADER %}
     {{ EXTRA_HEADER }}
     {% endif %}
+
 
 </head>
 <body>
