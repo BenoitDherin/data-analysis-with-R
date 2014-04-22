@@ -1800,8 +1800,8 @@ Data Analysis with R            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once collected and saved into your local file system, the raw but regular data will need to be unified into an appropriate collection of numerical arrays for further analysis. </p>
-<p>This is the second stage of the data analysis process. It involves operations on arrays such as <strong>merging</strong>, <strong>transforming</strong>, and <strong>aggregating</strong> the data, as well as the <strong>detection and treatment of abnormal or missing values</strong> that could cause errors or hinder algorithm performance. </p>
+<p>Once collected and saved into your local file system, the raw but regular data will need to be unified into an appropriate collection of numerical arrays for further analysis.</p>
+<p>This is the second stage of the data analysis process. It involves operations on arrays such as <strong>merging</strong>, <strong>transforming</strong>, and <strong>aggregating</strong> the data, as well as the <strong>detection and treatment of abnormal or missing values</strong> that could cause errors or hinder algorithm performance.</p>
 </div>
 </div>
 </div>
@@ -1820,7 +1820,7 @@ Data Analysis with R            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>raw data gathered from multiple sources $\longrightarrow$ clean data tables ready for analysis</p>
+<p>raw data gathered from multiple sources <span class="math">\(\longrightarrow\)</span> clean data tables ready for analysis</p>
 </div>
 </div>
 </div>
@@ -1956,7 +1956,7 @@ In&nbsp;[2]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The data <strong>tabular</strong> with separator &#39;|&#39;, we can directly load it into a data frame without any preprocessing:</p>
+<p>The data <strong>tabular</strong> with separator '|', we can directly load it into a data frame without any preprocessing:</p>
 </div>
 </div>
 </div>
@@ -2010,10 +2010,8 @@ In&nbsp;[3]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Looking at the box and date variables, we see a potential mismatch in types:</p>
 <ul>
-<li>the <strong>dollar sign</strong> in the box column seems to indicate that the box column is represented by a <strong>character vector</strong> instead of a <strong>numeric vector</strong></li>
-</ul>
-<ul>
-<li>the date column may also be represented by a <strong>character vector</strong> instead of a vector containing <strong>date objects</strong></li>
+<li><p>the <strong>dollar sign</strong> in the box column seems to indicate that the box column is represented by a <strong>character vector</strong> instead of a <strong>numeric vector</strong></p></li>
+<li><p>the date column may also be represented by a <strong>character vector</strong> instead of a vector containing <strong>date objects</strong></p></li>
 </ul>
 </div>
 </div>
@@ -2025,8 +2023,8 @@ In&nbsp;[3]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us check the variable types of this data frame.</p>
 <p>A <strong>data frame</strong> is a <strong>class</strong>. Since <strong>classes in R are just enhanced lists</strong> (containing the vectors representing our variables, or columns), we can use the <strong>list apply</strong> function on our data frame <code>df</code> in the following way:</p>
-<pre><code>lapply(df, class)
-</code></pre><p>which will return a list containing the classes of our data frame columns.</p>
+<pre><code>lapply(df, class)</code></pre>
+<p>which will return a list containing the classes of our data frame columns.</p>
 <p>For a better ouput, we will futher construct a data frame out of the return value of <code>lapply</code>:</p>
 </div>
 </div>
@@ -2111,12 +2109,9 @@ In&nbsp;[5]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A <code>factor</code> object stores</p>
 <ul>
-<li>the <strong>category values</strong> as <strong>vector of integers</strong></li>
-</ul>
-<ul>
+<li><p>the <strong>category values</strong> as <strong>vector of integers</strong></p></li>
 <li><p>the <strong>category names</strong> as a <strong>character vector</strong> accessible though the function</p>
-<p>  levels(x)</p>
-</li>
+<p>levels(x)</p></li>
 </ul>
 </div>
 </div>
@@ -2249,7 +2244,7 @@ In&nbsp;[8]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By default, the family of read functions <strong>interprets character columns as factors</strong>. </p>
+<p>By default, the family of read functions <strong>interprets character columns as factors</strong>.</p>
 <p>To prevent that, one needs to set the argument <code>stringsAsFactors</code> to <code>FALSE</code>:</p>
 </div>
 </div>
@@ -2367,17 +2362,17 @@ In&nbsp;[10]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>R has <a href="http://www.stat.berkeley.edu/classes/s133/R-5a.html">date class</a> used to represent <strong>temporal data</strong>. </p>
-<p>One can create a date out of a <em>date string</em> in using the function: </p>
-<pre><code>as.Date(date_string, pattern)
-</code></pre><p>where <code>pattern</code> is a string indicating how the date in <code>date_string</code> is formatted using the <em>date place holders</em>:</p>
+<p>R has <a href="http://www.stat.berkeley.edu/classes/s133/R-5a.html">date class</a> used to represent <strong>temporal data</strong>.</p>
+<p>One can create a date out of a <em>date string</em> in using the function:</p>
+<pre><code>as.Date(date_string, pattern)</code></pre>
+<p>where <code>pattern</code> is a string indicating how the date in <code>date_string</code> is formatted using the <em>date place holders</em>:</p>
 <pre><code>%d (day number)
 %m (month in decimal)
 %B (month in letter)
 %b (in abreviated)
 %y (year: two digits)
-%Y (year: four digits)
-</code></pre><p>This function returns a <code>Date</code> object, on which we can perform numerical operations:</p>
+%Y (year: four digits)</code></pre>
+<p>This function returns a <code>Date</code> object, on which we can perform numerical operations:</p>
 </div>
 </div>
 </div>
@@ -2493,11 +2488,11 @@ In&nbsp;[19]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We still need to correct our &quot;box&quot; collum, since it contains character strings of the type:</p>
-<pre><code>$759.563
-</code></pre><p>and we would like actual numerical values instead. </p>
+<pre><code>$759.563</code></pre>
+<p>and we would like actual numerical values instead.</p>
 <p>Unfortunately, we can not use the <strong>conversion function</strong></p>
-<pre><code>as.numeric(x)
-</code></pre><p>directly because of the presence of the dollar sign. </p>
+<pre><code>as.numeric(x)</code></pre>
+<p>directly because of the presence of the dollar sign.</p>
 <p>The return value would be in this case a vector of <strong>NA values</strong> (mising values).</p>
 </div>
 </div>
@@ -2545,8 +2540,8 @@ In&nbsp;[20]:
 <p>R provides a <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/grep.html">collection of function</a> to find and replace <strong>regular expressions</strong> in character vectors:</p>
 <pre><code>grep(pattern, x)
 sub(pattern, replacement, x)
-gsub(pattern, replacement, x)
-</code></pre><p>where </p>
+gsub(pattern, replacement, x)</code></pre>
+<p>where</p>
 <ul>
 <li><code>x</code> is a character vector</li>
 <li><code>pattern</code> is regular expression to match and replace</li>
@@ -2565,21 +2560,24 @@ gsub(pattern, replacement, x)
 <p><strong>Groups:</strong></p>
 <pre><code> ( ) delimits a group of characters
  |   means &quot;either the group or character on the left or on the rigth of |&quot;
-</code></pre><p><strong>Ranges:</strong></p>
+ </code></pre>
+<p><strong>Ranges:</strong></p>
 <pre><code>   .    means &quot;any character&quot;
  [...]  means &quot;any character enclosed between the brackets&quot;
  [^...] means &quot;any character not enclosed between the brackets&quot;
-</code></pre><p><strong>Modifiers:</strong></p>
+ 
+ </code></pre>
+<p><strong>Modifiers:</strong></p>
 <pre><code> *      means &quot;the previous character or group occurs zero or many times&quot;
  +      means &quot;the previous character or group occurs one or many times&quot;
  ?      means &quot;the previous character or group occurs zero or one time&quot;
  {n,m}  means &quot;the previous character or group occurs between n or m times&quot;
  {n}    means &quot;the previous character or group occurs exactly n times&quot;
- \      escape special characters
-</code></pre><p><strong>Positions:</strong></p>
+ \      escape special characters</code></pre>
+<p><strong>Positions:</strong></p>
 <pre><code> ^ means &quot;at the beginning of the line&quot;
- $ means &quot;at the end of the line&quot;
-</code></pre><p>Ressources to train your regurlar expression muscles. </p>
+ $ means &quot;at the end of the line&quot;</code></pre>
+<p>Ressources to train your regurlar expression muscles.</p>
 <ul>
 <li><a href="http://regex.learncodethehardway.org/book/">Learning regular expression the hard way</a></li>
 </ul>
@@ -2755,7 +2753,7 @@ In&nbsp;[]:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>One way to check if the values of a categorical variable are okay is to compute the statistic summary and look for aberrant means, medians, etc.</p>
-<p>Let&#39;s do that with the &quot;box&quot; variable:</p>
+<p>Let's do that with the &quot;box&quot; variable:</p>
 </div>
 </div>
 </div>
@@ -2800,11 +2798,11 @@ In&nbsp;[27]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This seems okay, but still, we&#39;d like to see how many movies are close to the max and min values. </p>
+<p>This seems okay, but still, we'd like to see how many movies are close to the max and min values.</p>
 <p>Some erroneous outlier values may have crept in, and we may see that by plotting</p>
 <ul>
-<li>a <strong>boxplot</strong> </li>
-<li>a <strong>histogram</strong> </li>
+<li>a <strong>boxplot</strong></li>
+<li>a <strong>histogram</strong></li>
 </ul>
 <p>of the variable values to spot outliers visualy.</p>
 </div>
@@ -2940,8 +2938,7 @@ FoMQi0GIxSDEYhBiMQixGIRYDEIsBiEWgxDr/9AubWuPTx9iAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It seems that there are quite a bunch of outliers. We may try to check the values
-by</p>
+<p>It seems that there are quite a bunch of outliers. We may try to check the values by</p>
 <ul>
 <li>retrieving the movie names</li>
 <li>comparing their high success with our expectations</li>
@@ -3153,12 +3150,12 @@ AiyLAMsiwLIIsCwC/wca9lSUPqsruAAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we have a temporal information, we maybe interested in  patterns in the time variable.</p>
+<p>Since we have a temporal information, we maybe interested in patterns in the time variable.</p>
 <p>We may want to add a variable for our analysis, for instance the day of the week that a movie was released. The function</p>
 <pre><code>weekdays(date)
-months(date)
-</code></pre><p>will return the corresponding day of the week for a data.</p>
-<p>Let&#39;s use is to create another variable and add it as a factor:</p>
+months(date)</code></pre>
+<p>will return the corresponding day of the week for a data.</p>
+<p>Let's use is to create another variable and add it as a factor:</p>
 </div>
 </div>
 </div>

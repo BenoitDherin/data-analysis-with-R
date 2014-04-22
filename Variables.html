@@ -17,7 +17,7 @@
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Variable Analysis"/>
             <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Variables.html"/>
-            <meta property="og:description" content="The second dimension of a data analysis problem is the variable dimension. The main algorithms for that dimension are regression and classification algorithms (&#34;supervised learning,&#34; in machine learning terms). As we saw, we may use the data collected about certain variables over a population to cluster that population. It is ..."/>
+            <meta property="og:description" content="The second dimension of a data analysis problem is the variable dimension. The main algorithms for that dimension are the regression and classification algorithms (&#34;supervised learning,&#34; in machine learning terms). As we saw, the variables we choose to consider for our target population allow us to carry out a &#34;population ..."/>
             <meta property="article:published_time" content="2014-03-03" />
                 <meta property="article:section" content="misc" />
                 <meta property="article:author" content="Benoit Dherin" />
@@ -1800,7 +1800,8 @@ Data Analysis with R            </a>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <strong>second dimension</strong> of a data analysis problem is the <strong>variable dimension.</strong> The main algorithms for that dimension are <strong>regression</strong> and <strong>classification</strong> algorithms (&quot;supervised learning,&quot; in machine learning terms). As we saw, we may use the data collected about certain variables over a population to cluster that population. It is also to use the same data to infer relationships between the variables. One aspect of that analysis is to detect groups of variables that seem to have an influence on each other. The second aspect is to characterize this relationship in the form of a law corrupted by some random noise: That is, we will try to fit a probalistic model to data, that approximate the overall geometry of the data we have best. </p>
+<p>The <strong>second dimension</strong> of a data analysis problem is the <strong>variable dimension.</strong> The main algorithms for that dimension are the <strong>regression</strong> and <strong>classification</strong> algorithms (&quot;supervised learning,&quot; in machine learning terms). As we saw, the variables we choose to consider for our target population allow us to carry out a &quot;population analysis&quot; by giving us criteria (the variable values) to group together individuals with similar values for the variable at hand. An orthogonal question to that grouping is the grouping of variables into groups entertaining a certain dependence (covariance) in the values that variables in the same group can take.</p>
+<p>Here we will mostly focus on <strong>linear regression techniques</strong> to analyse <strong>(linear) variable relationships</strong> between the variables.</p>
 </div>
 </div>
 </div>
@@ -3075,8 +3076,7 @@ Coefficients:
 <div class="text_cell_render border-box-sizing rendered_html">
 <pre><code>abline(model)
 fitted(model)
-resid(model)
-</code></pre>
+resid(model)</code></pre>
 </div>
 </div>
 </div>
@@ -5492,8 +5492,7 @@ REQaYdNAREREGmHTQERERBr5f+IWF7YgRyIbAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <pre><code>summary(model)
 plot(model)
-predict(model)
-</code></pre>
+predict(model)</code></pre>
 </div>
 </div>
 </div>
@@ -11257,19 +11256,19 @@ iA6AAkB0ABQAogOgABAdAAWA6AAoAEQHQAEgOgAKANEBUID/Af6l3DyQHTd8AAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We want to uncover a linear relation of the form:</p>
-<p>$$Y = \alpha + \beta_1 X_1 +\cdots + \beta_n X_n$$</p>
-<p>That is: We want to find </p>
-<p>$\alpha$ and $\beta = (\beta_1,\dots,\beta_n)$ </p>
-<p>such that the error committed on our sample (here <code>df</code>) </p>
-<p>$$E_s = \|Y - (\alpha + X\beta)\|^2$$ </p>
+<p><span class="math">\[Y = \alpha + \beta_1 X_1 +\cdots + \beta_n X_n\]</span></p>
+<p>That is: We want to find</p>
+<p><span class="math">\(\alpha\)</span> and <span class="math">\(\beta = (\beta_1,\dots,\beta_n)\)</span></p>
+<p>such that the error committed on our sample (here <code>df</code>)</p>
+<p><span class="math">\[E_s = \|Y - (\alpha + X\beta)\|^2\]</span></p>
 <p>is the smallest possible. The <strong>residual</strong> is the following vector computed on the sample:</p>
-<p>$$\epsilon = Y - (\alpha + X\beta) = (\epsilon_1, \dots, \epsilon_m),$$</p>
-<p>where the $i^{th}$ component indicates the error commited between the sample value of the $i^{ith}$ observation and the value predicted by the model for this observation: i.e.,</p>
-<p>$$\epsilon_i = y_i - (\alpha - \beta_1 x_{i1}+\cdots + \beta_n x_{in}).$$</p>
+<p><span class="math">\[\epsilon = Y - (\alpha + X\beta) = (\epsilon_1, \dots, \epsilon_m),\]</span></p>
+<p>where the <span class="math">\(i^{th}\)</span> component indicates the error commited between the sample value of the <span class="math">\(i^{ith}\)</span> observation and the value predicted by the model for this observation: i.e.,</p>
+<p><span class="math">\[\epsilon_i = y_i - (\alpha - \beta_1 x_{i1}+\cdots + \beta_n x_{in}).\]</span></p>
 <p>An <strong>an assumption of our model is that the residual are normally distributed around zero.</strong> It can be interpreted as a <strong>random error</strong> or a <strong>noise</strong> in our data.</p>
 <p>Using the linear model <code>lm</code>, we would like to see the strength of the correlation:</p>
-<p>$$Y = \alpha + X\beta + \epsilon.$$</p>
-<p>This is the generalization to several variables of what we just saw. </p>
+<p><span class="math">\[Y = \alpha + X\beta + \epsilon.\]</span></p>
+<p>This is the generalization to several variables of what we just saw.</p>
 </div>
 </div>
 </div>
